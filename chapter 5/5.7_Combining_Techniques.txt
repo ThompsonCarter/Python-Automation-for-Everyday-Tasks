@@ -1,0 +1,34 @@
+
+from watchdog.observers import Observer
+from watchdog.events import FileSystemEventHandler
+from pathlib import Path
+from datetime import datetime
+import exifread
+import shutil
+
+def get_date(path):
+    with open(path, "rb") as f:
+        tags = exifread.process_file(f)
+    date = tags.get("EXIF DateTimeOriginal")
+    return datetime.strptime(str(date), "%Y:%m:%d %H:%M:%S")
+
+class PhotoHandler(FileSystemEventHandler):
+    def on_created(self, event):
+        path = Path(event.src_path)
+        if path.suffix.lower() in [".jpg", ".jpeg"]:
+            date = get_date(path)
+            dest = Path("photos") / date.strftime("%Y") / date.strftime("%m")
+            dest.mkdir(parents=True, exist_ok=True)
+            new_name = date.strftime("%Y%m%d_%H%M%S") + path.suffix.lower()
+            shutil.move(str(path), dest / new_name)
+            print(f"Moved & renamed {path.name} → {dest/new_name}")
+
+if __name__ == "__main__":
+    handler = PhotoHandler()
+    Observer().schedule(handler, "raw_photos", recursive=False)
+    Observer().start()
+    print("Watching raw_photos/")
+    try:
+        while True: pass
+    except KeyboardInterrupt:
+        Observer().stop()

@@ -1,0 +1,7 @@
+
+# Key Takeaways
+# Pathlib makes file handling intuitive.
+# Iterate with iterdir(), rglob(), or os.walk.
+# Bulk rename: sequence counters for orderly files.
+# Backups: simple or incremental to protect data.
+# Watchdog: build reactive file workflows.

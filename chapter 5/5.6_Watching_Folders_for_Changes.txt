@@ -1,0 +1,31 @@
+
+import time
+from watchdog.observers import Observer
+from watchdog.events import FileSystemEventHandler
+from pathlib import Path
+
+class Processor(FileSystemEventHandler):
+    def on_created(self, event):
+        if not event.is_directory:
+            path = Path(event.src_path)
+            print("New file:", path.name)
+            # call your processing function
+            process(path)
+
+def process(path):
+    print("Processing", path)
+    # e.g., move to folder:
+    dest = Path("processed") / path.name
+    path.rename(dest)
+    print("Moved to", dest)
+
+if __name__ == "__main__":
+    folder = Path("incoming")
+    folder.mkdir(exist_ok=True)
+    Observer().schedule(Processor(), str(folder), recursive=False)
+    Observer().start()
+    try:
+        while True:
+            time.sleep(1)
+    except KeyboardInterrupt:
+        Observer().stop()

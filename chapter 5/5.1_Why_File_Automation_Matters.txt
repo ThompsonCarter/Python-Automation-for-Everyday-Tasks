@@ -1,0 +1,6 @@
+
+# Why File Automation Matters
+# Time savings: Renaming hundreds of photos in seconds.
+# Consistency: Uniform naming conventions for compliance or SEO.
+# Reliability: Automatic backups prevent data loss.
+# Reactivity: Scripts that trigger when new files appear—ideal for processing invoice scans or lab results.

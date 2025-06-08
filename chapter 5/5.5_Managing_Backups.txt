@@ -1,0 +1,27 @@
+
+import shutil
+from pathlib import Path
+from datetime import datetime
+
+# Simple Copy Backup
+src = Path("docs")
+dst = Path("docs_backup") / datetime.now().strftime("%Y%m%d_%H%M%S")
+shutil.copytree(src, dst)
+print("Backup created at", dst)
+
+# Incremental Backup
+import shutil, filecmp, os
+from pathlib import Path
+
+src = Path("data")
+dst = Path("data_backup")
+
+for root, dirs, files in os.walk(src):
+    dst_root = Path(dst, Path(root).relative_to(src))
+    dst_root.mkdir(parents=True, exist_ok=True)
+    for file in files:
+        s_file = Path(root) / file
+        d_file = dst_root / file
+        if not d_file.exists() or not filecmp.cmp(s_file, d_file, shallow=False):
+            shutil.copy2(s_file, d_file)
+            print("Copied", s_file)

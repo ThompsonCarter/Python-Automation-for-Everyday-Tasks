@@ -1,0 +1,6 @@
+
+# Troubleshooting & Tips
+# Permission errors: Ensure script has rights to read/write.
+# Naming conflicts: Check if file exists before renaming/moving.
+# LargeFolders: For thousands of files, consider using os.scandir() for speed.
+# Logging: Integrate Python’s logging to record actions for audits.

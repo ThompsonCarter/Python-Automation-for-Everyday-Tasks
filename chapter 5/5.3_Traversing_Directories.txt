@@ -1,0 +1,7 @@
+
+from pathlib import Path
+
+# List all files in the current directory recursively
+for file in Path(".").rglob("*"):
+    if file.is_file():
+        print(file)

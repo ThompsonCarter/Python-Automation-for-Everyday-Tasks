@@ -1,0 +1,14 @@
+
+from pathlib import Path
+
+# Define paths
+root = Path.home() / "Documents" / "python-files"
+print("Root exists?", root.exists())
+
+# Create if missing
+archive = root / "archive"
+archive.mkdir(exist_ok=True)
+
+# Absolute path
+print(root.resolve())
+Tip: Use / to join paths; it works across Windows/macOS/Linux.

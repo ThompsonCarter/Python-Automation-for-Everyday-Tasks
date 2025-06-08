@@ -1,0 +1,5 @@
+
+# Industry Applications
+# Manufacturing: archive machine logs and keep only latest 7 days for on-floor displays.
+# Healthcare: watch folder for lab results PDF and alert staff via SMS.
+# Logistics: bulk-rename shipment labels for consistent barcode scanning.

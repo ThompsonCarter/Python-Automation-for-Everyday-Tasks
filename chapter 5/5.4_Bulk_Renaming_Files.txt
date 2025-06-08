@@ -1,0 +1,10 @@
+
+# Project 5B: Prefix All Files
+from pathlib import Path
+
+folder = Path("images")
+for file in folder.iterdir():
+    if file.is_file():
+        new_name = f"vacation_{file.name}"
+        file.rename(folder / new_name)
+        print(f"Renamed {file.name} → {new_name}")
