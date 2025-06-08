@@ -1,0 +1,1 @@
+all_data = pd.concat([csv_df, excel_df], ignore_index=True, sort=False)

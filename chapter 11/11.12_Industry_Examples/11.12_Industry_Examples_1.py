@@ -1,0 +1,1 @@
+Manufacturing: sensor data cleaning and aggregation for dashboard.

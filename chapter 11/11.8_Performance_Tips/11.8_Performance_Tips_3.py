@@ -1,0 +1,1 @@
+df['column'].apply(lambda x: x*2)  # vectorized operation

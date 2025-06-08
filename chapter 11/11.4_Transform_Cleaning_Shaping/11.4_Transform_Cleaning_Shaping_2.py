@@ -1,0 +1,1 @@
+df.dropna(subset=['price'], inplace=True)  # remove rows missing price

@@ -1,0 +1,13 @@
+<!DOCTYPE html><html><head><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"><title>Orchestration</title></head><body>
+<h1>Task Dashboard</h1>
+<table>
+  <tr><th>ID</th><th>Next Run</th><th>Action</th></tr>
+  {% for job in jobs %}
+  <tr>
+    <td>{{ job.id }}</td>
+    <td>{{ job.next_run_time }}</td>
+    <td><a href="{{ url_for('run_job', job_id=job.id) }}">Run Now</a></td>
+  </tr>
+  {% endfor %}
+</table>
+</body></html>

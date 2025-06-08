@@ -1,0 +1,1 @@
+df = pd.read_csv('data.csv', dtype={'id': int, 'value': float})

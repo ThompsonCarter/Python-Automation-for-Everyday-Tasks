@@ -1,0 +1,1 @@
+df['quantity'].fillna(0, inplace=True)  # fill missing quantities with 0

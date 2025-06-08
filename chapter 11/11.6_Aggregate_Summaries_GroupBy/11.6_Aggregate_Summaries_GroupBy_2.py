@@ -1,0 +1,1 @@
+region_summary = df.groupby('region')['amount'].agg(['sum', 'mean', 'count'])

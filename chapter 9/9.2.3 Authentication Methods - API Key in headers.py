@@ -1,0 +1,1 @@
+headers = {"Authorization": f"Bearer {API_KEY}"}

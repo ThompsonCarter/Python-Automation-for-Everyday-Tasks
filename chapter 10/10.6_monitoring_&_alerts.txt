@@ -1,0 +1,14 @@
+import logging
+from logging.handlers import SMTPHandler
+
+mail_handler = SMTPHandler(
+    mailhost=("smtp.example.com", 587),
+    fromaddr="cron@example.com",
+    toaddrs=["admin@example.com"],
+    subject="Task Failure Alert",
+    credentials=("user", "pass")
+)
+mail_handler.setLevel(logging.ERROR)
+app.logger.addHandler(mail_handler)
+
+# Wrap task functions with try/except and log exceptions.
