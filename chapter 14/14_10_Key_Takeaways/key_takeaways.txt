@@ -1,0 +1,6 @@
+
+Smart lights via REST/LAN for instant feedback.
+Raspberry Pi GPIO lets Python sense the physical world.
+MQTT glues low-power devices to Home Assistant dashboards.
+Automations turn sensor thresholds into action—no manual taps.
+Security and backups are as vital as code correctness.

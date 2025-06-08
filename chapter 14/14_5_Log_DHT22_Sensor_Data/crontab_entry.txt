@@ -1,0 +1,1 @@
+@reboot /usr/bin/python3 /home/pi/dht_logger.py &

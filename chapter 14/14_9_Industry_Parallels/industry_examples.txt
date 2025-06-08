@@ -1,0 +1,4 @@
+
+Manufacturing: Python scripts on edge gateways publish sensor MQTT to SCADA; smart stack-lights mimic our Hue alerts.
+Healthcare: Raspberry Pi boards log fridge temperatures for vaccines; Home Assistant dashboards show compliance charts.
+Logistics: Warehouse lighting responds to fork-lift proximity; Pi cameras detect occupancy.

@@ -1,0 +1,5 @@
+
+Exposed Wi-Fi bulbs: Use LAN-only firewall rules, no cloud.
+Pi SD corruption: Daily backups (rpi-clone or rsync).
+MQTT hijack: Set username/password, enable TLS.
+Home Assistant exploits: Keep updated, use strong secrets.yaml.

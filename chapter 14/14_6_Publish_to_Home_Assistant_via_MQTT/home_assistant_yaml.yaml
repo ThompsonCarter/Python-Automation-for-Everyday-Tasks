@@ -1,0 +1,12 @@
+
+mqtt:
+  sensor:
+    - name: Living Room Temp
+      state_topic: "home/sensors/dht22"
+      unit_of_measurement: "°C"
+      value_template: "{{ value_json.temp }}"
+    - name: Living Room Hum
+      state_topic: "home/sensors/dht22"
+      unit_of_measurement: "%"
+      value_template: "{{ value_json.hum }}"
+Restart Home Assistant → add sensor to dashboard.
